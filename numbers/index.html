@@ -1,0 +1,16 @@
+---
+layout: default
+title: Numbers 0 to 99
+description: A page for every number from 0 to 99, with factors, prime check, binary, Roman numeral, English and Hindi names and draw odds.
+---
+<section class="wrap page">
+  <h1>The number library: 0 to 99</h1>
+  <p class="lede">One hundred chits, one hundred pages. Today's number is highlighted.</p>
+  <div class="numgrid">
+    {%- for i in (0..99) %}<a href="{{ '/numbers/' | append: i | append: '.html' | relative_url }}">{{ i }}</a>{% endfor %}
+  </div>
+  <h2>What is on each page</h2>
+  <p>Every number gets its name in English and romanised Hindi, its Devanagari digits, Roman numeral, binary and hexadecimal forms, its divisors, whether it is prime, its square and cube, and its exact chance of being pulled in a fair pot draw. Need a number above 99? Use the <a href="{{ '/tools/number-checker.html' | relative_url }}">number checker</a>, which handles up to twelve digits.</p>
+  <h2>Quick facts about 0 to 99</h2>
+  <ul><li>25 of them are prime, from 2 to 97.</li><li>10 are perfect squares: 0, 1, 4, 9, 16, 25, 36, 49, 64 and 81.</li><li>10 have two identical digits when written as 00 to 99.</li><li>They add up to 4,950.</li></ul>
+</section>

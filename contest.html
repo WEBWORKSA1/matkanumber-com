@@ -1,0 +1,46 @@
+---
+title: Monthly number puzzle contest
+description: A free monthly number puzzle. Send the right answer and you go into a public random draw made with our own pot. No purchase, no stake.
+nolead: true
+---
+<section class="wrap page">
+  <h1>The monthly number puzzle</h1>
+  <p class="lede">Free to enter, one puzzle a month. Correct answers go into the pot and winners are drawn in public.</p>
+  <div class="tool-layout">
+    <div class="prose">
+      <div class="toolbox">
+        <p class="eyebrow" style="color:#b9562c">Puzzle for <span class="contest-month"></span></p>
+        <p class="fact puzzle">Loading this month's puzzle…</p>
+        <p><strong>Prize:</strong> <span class="prize"></span>.</p>
+        <p>Entries close in:</p><div class="count"></div>
+        <form class="mn-form" data-form="Contest entry">
+          <div class="row">
+            <label>Your answer<input name="answer" required maxlength="40"></label>
+            <label>Name<input name="name" required maxlength="60" autocomplete="name"></label>
+            <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+          </div>
+          <label>Country<input name="country" required maxlength="60" autocomplete="country-name"></label>
+          <input type="hidden" name="contest_month">
+          <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="check"><input type="checkbox" name="rules" value="accepted" required> I am 18 or older and accept the rules below.</label>
+          <label class="check"><input type="checkbox" name="newsletter" value="yes"> Also send me the weekly Number of the Week email.</label>
+          <button class="btn" type="submit">Enter the draw</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <h2>Rules</h2>
+      <ol>
+        <li><strong>Free entry.</strong> No purchase, payment or stake of any kind. This is a skill puzzle followed by a random draw among correct entries. It is not gambling.</li>
+        <li>One entry per person per month. Entrants must be 18 or older.</li>
+        <li>Entries close at the end of the last day of the month. Late entries are not counted.</li>
+        <li>Winners are picked from correct answers using the <a href="{{ '/tools/matka-draw.html' | relative_url }}">Matka Draw</a> tool, and the draw record is published on this page.</li>
+        <li>Winners are contacted by email and have 14 days to reply, after which a reserve is drawn.</li>
+        <li>Prizes are as described for each month, are not exchangeable for cash unless stated, and any taxes are the winner's responsibility.</li>
+        <li>Void where prohibited by law. The organiser's decision is final. Your details are used only to run the contest, as set out in the <a href="{{ '/privacy.html' | relative_url }}">privacy page</a>.</li>
+      </ol>
+      <h2>Sponsor a prize</h2>
+      <p>Brands, publishers and educators can sponsor a month. Your name appears with the puzzle and in the weekly email. <a href="{{ '/advertise.html' | relative_url }}">See sponsorship options</a>.</p>
+    </div>
+    <aside class="side"><h3>Past winners</h3><p>The first draw record will appear here after the first contest closes.</p><h3>Practice</h3><a class="sidelink" href="{{ '/tools/number-checker.html' | relative_url }}">🔍 Number checker</a><a class="sidelink" href="{{ '/tools/dice-roller.html' | relative_url }}">⚀ Dice roller</a><a class="sidelink" href="{{ '/learn/' | relative_url }}">📚 Lessons</a></aside>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+title: Videos on randomness and probability
+description: Hand-picked YouTube videos from trusted educators that explain randomness, probability and why intuition about chance goes wrong.
+---
+<section class="wrap page">
+  <h1>Videos: randomness and probability</h1>
+  <p class="lede">Six videos from educators we trust. Each plays here through YouTube's own player, and nothing loads from YouTube until you press play.</p>
+  <div class="cards">
+    {%- for v in site.data.videos %}
+    <div class="card"><button class="video" data-yt="{{ v.id }}" aria-label="Play {{ v.title }}"></button><h3>{{ v.title }}</h3><p><strong>{{ v.by }}</strong> · {{ v.why }}</p><p><a href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">Watch on YouTube</a></p></div>
+    {%- endfor %}
+  </div>
+  <h2>A suggested order</h2>
+  <p>Start with Khan Academy for the basics of independent events. Watch Vsauce and Veritasium as a pair for the big picture. Numberphile explains how computers produce random numbers, which is what our tools rely on. Finish with TED-Ed's dice puzzle and 3Blue1Brown on updating beliefs.</p>
+  <div class="note">Videos belong to their creators and are embedded with YouTube's standard player. MatkaNumber is not affiliated with these channels. Are you a creator with a good probability explainer? <a href="{{ '/contact.html' | relative_url }}">Suggest a video</a>.</div>
+</section>
