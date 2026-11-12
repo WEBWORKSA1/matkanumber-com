@@ -1,0 +1,24 @@
+---
+title: Odds and Expected Value Calculator
+description: Enter the chance of winning and what a game pays. See the return to player, the organiser's cut and what you can expect to lose over time.
+tooljs: true
+---
+<div class="toolbox" id="odds">
+  <form>
+    <div class="row">
+      <label>Chance of winning: 1 in<input name="oneIn" type="number" min="1" value="100"></label>
+      <label>A win pays (× stake)<input name="pays" type="number" min="0" step="any" value="90"></label>
+      <label>Stake per round<input name="stake" type="number" min="0" step="any" value="10"></label>
+      <label>Rounds played<input name="rounds" type="number" min="1" max="100000" value="365"></label>
+    </div>
+    <button class="btn" type="submit">Simulate these rounds</button>
+  </form>
+  <div class="result"></div>
+</div>
+<h2>Reading the result</h2>
+<p>A game is fair when the payout matches the odds: a 1-in-100 result should pay 100 times the stake. Real number games pay less, and the gap is the organiser's profit. The example loaded above is a two-digit draw (1 in 100) that pays 90 times the stake. The return to player is 90%, so on average 10 of every 100 staked is gone for good.</p>
+<p>The green part of the bar is what comes back to players as a group. The red part is what the organiser keeps. Press "Simulate" a few times: a short run can end ahead, which is what keeps people playing, but the more rounds you add, the closer the result sits to the expected loss.</p>
+<h2>The formula</h2>
+<p>Expected return = chance of winning × payout. With a chance of 1/100 and a payout of 90, that is 0.9, or 90%. Expected loss = total staked × (1 − expected return). Nothing about past results, charts or "lucky" numbers changes either figure.</p>
+<div class="note">This calculator exists to show why betting on numbers loses money. It is not an invitation to play. If gambling is causing you harm, see <a href="{{ '/learn/help-for-gambling-problems.html' | relative_url }}">where to get help</a>.</div>
+<p>Go deeper: <a href="{{ '/learn/why-number-betting-loses.html' | relative_url }}">why number betting always loses</a>.</p>

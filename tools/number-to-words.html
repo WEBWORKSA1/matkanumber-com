@@ -1,0 +1,14 @@
+---
+title: Number to Words Converter
+description: Convert numbers to words in both the international system (million, billion) and the Indian system (lakh, crore), with correct comma grouping.
+tooljs: true
+---
+<div class="toolbox" id="words">
+  <label>Number<input inputmode="numeric" value="12345678" maxlength="20" aria-label="Number to convert"></label>
+  <div class="result"></div>
+</div>
+<h2>Two systems, one number</h2>
+<p>The international system groups digits in threes: thousand, million, billion. The Indian system groups the last three digits and then pairs: thousand, lakh, crore. So 12,345,678 in the international style is written 1,23,45,678 in the Indian style and read as one crore twenty-three lakh forty-five thousand six hundred seventy-eight.</p>
+<table><tr><th>Indian</th><th>Figure</th><th>International</th></tr><tr><td>One lakh</td><td>1,00,000</td><td>One hundred thousand</td></tr><tr><td>Ten lakh</td><td>10,00,000</td><td>One million</td></tr><tr><td>One crore</td><td>1,00,00,000</td><td>Ten million</td></tr><tr><td>One hundred crore</td><td>1,00,00,00,000</td><td>One billion</td></tr></table>
+<h2>Where this helps</h2>
+<p>Writing cheques, reading financial news from another country, checking invoices and teaching place value. More detail in <a href="{{ '/learn/indian-numbering-system.html' | relative_url }}">the Indian numbering system explained</a>.</p>

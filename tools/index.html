@@ -1,0 +1,16 @@
+---
+layout: default
+title: Free number tools
+description: Nine free tools for fair draws, random numbers, dice, coins, number facts, words and odds. They run in your browser with no sign-up.
+---
+<section class="wrap page">
+  <h1>Free number tools</h1>
+  <p class="lede">Pick winners, generate numbers, check any number and see what the odds really are. No sign-up, nothing uploaded.</p>
+  <div class="filter"><button class="on" data-tag="all">All</button><button data-tag="draw">Draw and pick</button><button data-tag="numbers">Number facts</button><button data-tag="learn">Odds</button></div>
+  <div class="cards">
+    {%- for t in site.data.tools %}
+    <a class="card" data-tooltag="{{ t.tag }}" href="{{ t.url | relative_url }}"><div class="ico">{{ t.icon }}</div><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>
+    {%- endfor %}
+  </div>
+  <div class="note"><strong>What these tools are for:</strong> giveaways, raffles for clubs and classrooms, games, teaching and curiosity. They cannot predict the result of any lottery or betting game, and neither can anything else.</div>
+</section>

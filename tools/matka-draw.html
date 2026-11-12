@@ -1,0 +1,27 @@
+---
+title: "Matka Draw: random name and ticket picker"
+description: Paste names or ticket numbers, shake the pot and draw one or more winners fairly. Copy a time-stamped record you can publish.
+tooljs: true
+---
+<div class="toolbox" id="draw">
+  {% include pot.html %}
+  <label>Entries, one per line or separated by commas (<span class="count-entries">0</span> in the pot)
+    <textarea placeholder="Asha&#10;Ravi&#10;Meera&#10;Ticket 0457"></textarea></label>
+  <div class="row">
+    <label>Winners to draw<input name="winners" type="number" min="1" value="1"></label>
+    <label class="check"><input type="checkbox" name="remove"> Remove winners from the pot after each draw</label>
+    <label class="check"><input type="checkbox" name="dedupe" checked> Ignore duplicate entries</label>
+  </div>
+  <button class="btn" type="button" data-run>Shake the pot and draw</button>
+  <div class="result">Winners appear here.</div>
+  <div class="actions" hidden><button class="btn ghost small" type="button" data-record>Copy draw record</button></div>
+  <h3>This session</h3><ol class="history"></ol>
+</div>
+<h2>How to run a draw</h2>
+<ol><li>Paste every valid entry into the box. One line per entry keeps it clear.</li><li>Set how many winners you need.</li><li>Press the button. Each entry has exactly the same chance.</li><li>Copy the draw record and post it with your result.</li></ol>
+<h2>What is in the draw record?</h2>
+<p>The record lists the date and time, how many entries were in the pot, the winners, and a fingerprint (a SHA-256 hash) of your entry list. If you publish the entry list, anyone can recompute the fingerprint and confirm that the list was not changed after the draw. That is the digital version of showing everyone the pot before you reach in.</p>
+<h2>Why draw from a pot?</h2>
+<p>Drawing chits from a clay pot is one of the oldest fair-selection methods in India: everyone can see the chits go in, and nobody can see which one comes out. This tool keeps the idea and replaces the hand with a cryptographic random source. Your list stays in your browser and is never uploaded.</p>
+<div class="faq"><details><summary>Can I give some entries a better chance?</summary><p>Yes. Enter a name once for each ticket it holds and switch off "Ignore duplicate entries".</p></details>
+<details><summary>Is this suitable for paid raffles?</summary><p>The tool only picks at random. Paid raffles and lotteries are regulated or prohibited in many places, so check your local rules first. Our <a href="{{ '/draw-kit.html' | relative_url }}">Fair Draw Kit</a> covers free giveaways.</p></details></div>

@@ -1,0 +1,97 @@
+---
+title: MatkaNumber
+description: Draw a fair random number from the matka, pick giveaway winners, explore every number from 0 to 99 and learn the real maths of chance. Free, with no betting and no tips.
+---
+<section class="hero">
+  <div class="wrap herogrid">
+    <div>
+      <p class="eyebrow">Fair draws · number tools · the maths of chance</p>
+      <h1>Pull a number from the <em>matka</em>.</h1>
+      <p>A matka is a clay pot. Long before apps, people drew numbered chits from one to pick a winner fairly. MatkaNumber brings that pot online: honest random draws, handy number tools, and clear lessons on how chance really works.</p>
+      <div class="cta">
+        <a class="btn gold" href="{{ '/tools/matka-draw.html' | relative_url }}">Run a fair draw</a>
+        <a class="btn ghost" href="{{ '/tools/' | relative_url }}">See all 9 tools</a>
+      </div>
+      <p><small>No betting. No results. No tips. <a style="color:#fff" href="{{ '/about.html' | relative_url }}">Why?</a></small></p>
+    </div>
+    <div class="drawcard" data-homedraw>
+      {% include pot.html %}
+      <label style="color:#fff">Draw from
+        <select><option value="1">0 to 9 (one digit)</option><option value="2" selected>00 to 99 (two digits)</option><option value="3">000 to 999 (three digits)</option></select></label>
+      <button class="btn gold" type="button">Shake the pot</button>
+      <p class="homeout" style="color:#fff;min-height:1.6em;margin:.6em 0 0">Every chit has the same chance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="eyebrow">Today, <span class="today-date"></span></p>
+    <h2>Number of the day: <a class="nod-link" href="{{ '/numbers/' | relative_url }}"><span class="nod">…</span></a></h2>
+    <p>A new number every day, the same for every visitor. Tap it for its factors, its name in English and Hindi, its binary form and its odds in a pot draw.</p>
+    {%- if site.data.build %}{% assign nod = site.data.build.day | times: 37 | plus: 11 | modulo: 100 %}{% assign nd = site.data.numbers[nod] %}
+    <p class="fact nod-facts" data-nod="{{ nod }}">{{ nod }} is "{{ nd.w }}" in English and "{{ nd.h }}" in Hindi. In binary it is {{ nd.b }}{% if nd.r != '' and nod > 0 %} and in Roman numerals {{ nd.r }}{% endif %}.{% if nd.f %} {{ nd.f }}{% endif %}</p>
+    {%- endif %}
+    <div class="stats">
+      <div><b>9</b>free tools</div><div><b>100</b>number pages</div><div><b>9</b>lessons</div><div><b>0</b>bets taken, ever</div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2>Tools that do one job well</h2>
+    <p>Everything runs in your browser. Nothing you type is uploaded.</p>
+    <div class="cards">
+      {%- for t in site.data.tools %}
+      <a class="card" href="{{ t.url | relative_url }}"><div class="ico">{{ t.icon }}</div><h3>{{ t.name }}</h3><p>{{ t.short }}</p></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Understand chance before chance costs you</h2>
+    <p>Search for "matka number" and you will find thousands of pages selling tips and "fixed" numbers. None of them can work, and the arithmetic below shows why. These lessons are short, free and written in plain language.</p>
+    <div class="cards three">
+      {%- assign arts = site.pages | where: "layout", "article" | sort: "order" -%}
+      {%- for a in arts limit: 6 %}
+      <a class="card" href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3><p>{{ a.description }}</p></a>
+      {%- endfor %}
+    </div>
+    <p style="margin-top:20px"><a class="btn ghost" href="{{ '/learn/' | relative_url }}">All lessons</a></p>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2>Watch: randomness explained</h2>
+    <div class="cards three">
+      {%- for v in site.data.videos limit: 3 %}
+      <div class="card"><button class="video" data-yt="{{ v.id }}" aria-label="Play {{ v.title }}"></button><h3>{{ v.title }}</h3><p>{{ v.by }} · {{ v.why }}</p></div>
+      {%- endfor %}
+    </div>
+    <p style="margin-top:20px"><a class="btn ghost" href="{{ '/videos.html' | relative_url }}">More videos</a></p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cards three">
+      <a class="card" href="{{ '/contest.html' | relative_url }}"><div class="ico">🏆</div><h3>Monthly number puzzle</h3><p>Free to enter. Solve the puzzle, and winners are drawn in public with our own pot.</p></a>
+      <a class="card" href="{{ '/advertise.html' | relative_url }}"><div class="ico">📣</div><h3>Advertise or sponsor</h3><p>Put your brand beside tools that teachers, creators and organisers use.</p></a>
+      <a class="card" href="{{ '/support.html' | relative_url }}"><div class="ico">❤️</div><h3>Support the pot</h3><p>Help keep the tools free and fund new lessons, prizes and translations.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="block alt faq">
+  <div class="wrap narrow">
+    <h2>Questions people ask</h2>
+    <details><summary>Is this a Satta Matka results or guessing site?</summary><p>No. MatkaNumber publishes no gambling results, charts, tips or predictions, and takes no bets. It is a tools and education site built around the original meaning of the word: a pot used to draw numbers fairly.</p></details>
+    <details><summary>Are the draws really random?</summary><p>Yes. Draws use your browser's cryptographic random source, the same kind used to create security keys, and every entry has an equal chance. See <a href="{{ '/learn/how-random-number-generators-work.html' | relative_url }}">how random number generators work</a>.</p></details>
+    <details><summary>Can any tool predict a lucky or winning number?</summary><p>No. A fair draw has no memory, so nothing predicts it. Any site claiming otherwise is selling a guess. Read <a href="{{ '/learn/gamblers-fallacy.html' | relative_url }}">the gambler's fallacy</a>.</p></details>
+    <details><summary>Is it free?</summary><p>Yes. The site is funded by advertising, sponsors and supporter contributions.</p></details>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+title: Random Number Generator
+description: Generate one random number or up to 10,000, in any range, with or without repeats. Copy the list or download it as CSV.
+tooljs: true
+---
+<div class="toolbox" id="rng">
+  <form>
+    <div class="row">
+      <label>Minimum<input name="min" type="number" value="0" required></label>
+      <label>Maximum<input name="max" type="number" value="99" required></label>
+      <label>How many<input name="count" type="number" min="1" max="10000" value="1" required></label>
+    </div>
+    <div class="row">
+      <label class="check"><input type="checkbox" name="unique"> No repeats</label>
+      <label class="check"><input type="checkbox" name="sort"> Sort results</label>
+    </div>
+    <button class="btn" type="submit">Generate</button>
+  </form>
+  <div class="result">Your numbers appear here.</div>
+  <div class="actions" hidden><button class="btn ghost small" type="button" data-copy>Copy</button><button class="btn ghost small" type="button" data-csv>Download CSV</button></div>
+</div>
+<h2>How it works</h2>
+<p>Set the lowest and highest number you want, choose how many to draw and press Generate. Tick "No repeats" when each number may appear only once, for example when handing out seat numbers or drawing several raffle tickets. Tick "Sort results" for an ordered list.</p>
+<p>The generator uses your browser's cryptographic random source and a method called rejection sampling, which removes the small bias that simpler generators have at the edges of a range. Every number in your range is equally likely on every draw.</p>
+<h2>Common uses</h2>
+<ul><li>Picking a raffle ticket or a winning comment number</li><li>Choosing a student, a team order or a turn order</li><li>Creating sample data and test cases</li><li>Classroom probability experiments: draw 1,000 numbers and count how often each appears</li></ul>
+<div class="faq"><details><summary>Can it pick lottery or betting numbers that win?</summary><p>It can pick numbers, but random numbers are no more or less likely to win than any others. No generator improves your odds in any game.</p></details>
+<details><summary>What is the largest range?</summary><p>Any whole numbers your browser can represent exactly. For lists without repeats you can draw up to 10,000 numbers at a time.</p></details></div>
