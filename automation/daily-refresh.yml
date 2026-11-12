@@ -1,0 +1,27 @@
+name: Daily refresh
+# Commits a small data file once a day so GitHub Pages rebuilds the site
+# and the home page shows the new number of the day without JavaScript.
+# To switch on: copy this file to .github/workflows/daily-refresh.yml
+# (Add file > Create new file on GitHub, paste, commit).
+on:
+  schedule:
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write build stamp
+        run: |
+          mkdir -p _data
+          printf '{"date":"%s","day":%s}\n' "$(date -u +%F)" "$(( $(date -u +%s) / 86400 ))" > _data/build.json
+      - name: Commit
+        run: |
+          git config user.name "matkanumber-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add _data/build.json
+          git diff --cached --quiet || git commit -m "Daily refresh $(date -u +%F)"
+          git push
