@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="wrap page narrow">
+  <p class="crumbs"><a href="{{ '/' | relative_url }}">Home</a> › <a href="{{ '/learn/' | relative_url }}">Learn</a> › {{ page.title }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.description }}</p>
+  <p class="meta">{{ page.read | default: '4' }} min read</p>
+  <div class="prose">{{ content }}</div>
+  <div class="note">This article is general education, not legal, financial or medical advice. MatkaNumber does not offer or promote betting.</div>
+  <h2>Keep reading</h2>
+  <div class="cards three">
+    {%- assign others = site.pages | where: "layout", "article" | sort: "order" -%}
+    {%- assign shown = 0 -%}
+    {%- for a in others %}{% if a.url != page.url and a.title and shown < 3 %}{% assign shown = shown | plus: 1 %}
+    <a class="card" href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3><p>{{ a.description }}</p></a>
+    {%- endif %}{% endfor %}
+  </div>
+</article>

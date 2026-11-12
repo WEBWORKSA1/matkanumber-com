@@ -1,0 +1,20 @@
+<section class="leadband" id="join">
+  <div class="wrap leadgrid">
+    <div>
+      <p class="eyebrow">Free · one email a week</p>
+      <h2>Get the Fair Draw Kit and the Number of the Week</h2>
+      <p>Running a giveaway, raffle, class pick or office draw? The kit gives you a rules template, a fairness checklist and a results record you can publish. Then one short email a week: a number, a puzzle and a new tool.</p>
+      <ul class="ticks"><li>Giveaway rules template</li><li>10-point fair draw checklist</li><li>Unsubscribe any time</li></ul>
+    </div>
+    <form class="mn-form card" data-form="Draw Kit and newsletter signup" data-next="/draw-kit.html?welcome=1">
+      <label>First name<input name="name" autocomplete="given-name" required maxlength="60"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <label>I am mostly here for
+        <select name="interest"><option>Running draws and giveaways</option><option>Number tools</option><option>Learning probability</option><option>Teaching or classroom use</option><option>Advertising or partnership</option></select></label>
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check"><input type="checkbox" name="consent" value="yes" required> Send me the kit and the weekly email. I have read the <a href="{{ '/privacy.html' | relative_url }}">privacy page</a>.</label>
+      <button class="btn" type="submit">Send me the kit</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

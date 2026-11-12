@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{%- if page.n -%}
+  {%- assign nd = site.data.numbers[page.n] -%}
+  {%- capture ptitle -%}Number {{ page.n }}: factors, words, binary and draw odds{%- endcapture -%}
+  {%- capture pdesc -%}The number {{ page.n }} ({{ nd.w }}): divisors, prime check, square and cube, binary, Roman numeral, Hindi name and its odds in a fair pot draw.{%- endcapture -%}
+{%- else -%}
+  {%- assign ptitle = page.title -%}
+  {%- assign pdesc = page.description | default: site.description -%}
+{%- endif %}
+<title>{% if page.url == '/' %}{{ site.title }}: {{ site.tagline }}{% else %}{{ ptitle }} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ pdesc | strip_newlines | escape }}">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ ptitle | default: site.title | escape }}">
+<meta property="og:description" content="{{ pdesc | strip_newlines | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta name="theme-color" content="#1f2450">
+<meta name="google-adsense-account" content="{{ site.adsense_client }}">
+{%- if page.ads != false %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+{%- endif %}
+<link rel="icon" href="{{ '/assets/img/pot.svg' | relative_url }}" type="image/svg+xml">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"{{ site.title }}","url":"{{ '/' | absolute_url }}","description":"{{ site.description | strip_newlines | escape }}"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="ownerbar"><a href="{{ site.owner_contact }}" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership</a></div>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/pot.svg' | relative_url }}" alt="" width="34" height="34"><span>Matka<b>Number</b></span></a>
+    <button class="navbtn" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+    <nav id="nav" aria-label="Main">
+      <a href="{{ '/tools/' | relative_url }}">Tools</a>
+      <a href="{{ '/numbers/' | relative_url }}">Numbers</a>
+      <a href="{{ '/learn/' | relative_url }}">Learn</a>
+      <a href="{{ '/videos.html' | relative_url }}">Videos</a>
+      <a href="{{ '/contest.html' | relative_url }}">Contest</a>
+      <a href="{{ '/support.html' | relative_url }}">Support</a>
+      <a class="btn small" href="{{ '/draw-kit.html' | relative_url }}">Free Draw Kit</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{ content }}
+</main>
+{%- unless page.nolead %}{% include lead.html %}{% endunless %}
+<footer class="site-footer">
+  <div class="wrap fgrid">
+    <div>
+      <p class="brand light"><img src="{{ '/assets/img/pot.svg' | relative_url }}" alt="" width="28" height="28"><span>Matka<b>Number</b></span></p>
+      <p>A free numbers site built around the matka, the clay pot that numbers were once drawn from. We publish tools and education only. <strong>No betting, no gambling results, no tips, no predictions.</strong></p>
+      <p>Number of the day: <a class="nod-link" href="{{ '/numbers/' | relative_url }}"><span class="nod">…</span></a></p>
+    </div>
+    <div><h4>Explore</h4>
+      <a href="{{ '/tools/' | relative_url }}">All tools</a><a href="{{ '/numbers/' | relative_url }}">Numbers 0 to 99</a><a href="{{ '/learn/' | relative_url }}">Learn</a><a href="{{ '/videos.html' | relative_url }}">Videos</a><a href="{{ '/contest.html' | relative_url }}">Monthly contest</a><a href="{{ '/draw-kit.html' | relative_url }}">Free Draw Kit</a></div>
+    <div><h4>Work with us</h4>
+      <a href="{{ '/advertise.html' | relative_url }}">Advertise and sponsor</a><a href="{{ '/support.html' | relative_url }}">Support the site</a><a href="{{ '/careers.html' | relative_url }}">Careers and contributors</a><a href="{{ '/contact.html' | relative_url }}">Contact</a><a href="{{ site.owner_contact }}" target="_blank" rel="noopener">Buy this domain</a></div>
+    <div><h4>Site</h4>
+      <a href="{{ '/about.html' | relative_url }}">About</a><a href="{{ '/privacy.html' | relative_url }}">Privacy and cookies</a><a href="{{ '/terms.html' | relative_url }}">Terms</a><a href="{{ '/disclaimer.html' | relative_url }}">Disclaimer and trademarks</a><a href="{{ '/learn/help-for-gambling-problems.html' | relative_url }}">Gambling help</a></div>
+  </div>
+  <div class="wrap legal">
+    <p>© <span class="year">2026</span> {{ site.domain }}. "MatkaNumber" is used only as the descriptive name of this website and domain. This site is independent and is not affiliated with, endorsed by or connected to any lottery, betting operator, game, app or brand using the words "Matka" or "Matka Number". All other names belong to their owners. <a href="{{ '/disclaimer.html' | relative_url }}">Full disclosure</a>.</p>
+  </div>
+</footer>
+<div class="cookie" hidden><p>We use cookies for site preferences and, with Google AdSense, to show and measure ads. See our <a href="{{ '/privacy.html' | relative_url }}">privacy page</a>.</p><button class="btn small" data-cookie="ok">OK</button></div>
+<script>window.MN_BASE="{{ site.baseurl }}";</script>
+<script src="{{ '/assets/js/config.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+{%- if page.tooljs %}<script src="{{ '/assets/js/tools.js' | relative_url }}"></script>{% endif %}
+</body>
+</html>

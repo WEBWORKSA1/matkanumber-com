@@ -1,0 +1,11 @@
+[
+{"name":"Matka Draw: name and ticket picker","short":"Pick fair winners from a list, with a publishable record.","icon":"🏺","url":"/tools/matka-draw.html","tag":"draw"},
+{"name":"Random Number Generator","short":"One number or thousands, any range, with or without repeats.","icon":"🎲","url":"/tools/random-number-generator.html","tag":"draw"},
+{"name":"Odds and Expected Value Calculator","short":"See what a number game really returns over time.","icon":"📉","url":"/tools/odds-calculator.html","tag":"learn"},
+{"name":"Dice Roller","short":"Roll up to six dice with 4 to 100 sides.","icon":"⚀","url":"/tools/dice-roller.html","tag":"draw"},
+{"name":"Coin Flip","short":"Heads or tails with running statistics.","icon":"🪙","url":"/tools/coin-flip.html","tag":"draw"},
+{"name":"Number Checker","short":"Prime test, factors, binary, hex and Roman for any number.","icon":"🔍","url":"/tools/number-checker.html","tag":"numbers"},
+{"name":"Number to Words","short":"International and Indian (lakh, crore) systems.","icon":"🔤","url":"/tools/number-to-words.html","tag":"numbers"},
+{"name":"Roman Numeral Converter","short":"Convert 1 to 3999 both ways.","icon":"🏛️","url":"/tools/roman-numerals.html","tag":"numbers"},
+{"name":"Numerology Number Calculator","short":"Name and birth-date numbers, for fun only.","icon":"✨","url":"/tools/numerology-calculator.html","tag":"numbers"}
+]

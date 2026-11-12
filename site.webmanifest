@@ -1,0 +1,4 @@
+---
+layout: none
+---
+{"name":"MatkaNumber","short_name":"MatkaNumber","start_url":"{{ '/' | relative_url }}","display":"standalone","background_color":"#fbf6ee","theme_color":"#1f2450","icons":[{"src":"{{ '/assets/img/pot.svg' | relative_url }}","sizes":"any","type":"image/svg+xml"}]}

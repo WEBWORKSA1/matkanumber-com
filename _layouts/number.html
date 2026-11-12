@@ -1,0 +1,71 @@
+---
+layout: default
+---
+{%- assign n = page.n -%}
+{%- assign d = site.data.numbers[n] -%}
+{%- assign divs = '' -%}
+{%- assign cnt = 0 -%}
+{%- if n > 0 -%}
+  {%- for i in (1..n) -%}
+    {%- assign r = n | modulo: i -%}
+    {%- if r == 0 -%}
+      {%- assign cnt = cnt | plus: 1 -%}
+      {%- if divs == '' -%}{%- assign divs = i -%}{%- else -%}{%- assign divs = divs | append: ', ' | append: i -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- assign sq = n | times: n -%}
+{%- assign cu = sq | times: n -%}
+{%- assign par = n | modulo: 2 -%}
+{%- assign prev = n | minus: 1 -%}
+{%- assign next = n | plus: 1 -%}
+{%- assign tensd = n | divided_by: 10 | floor -%}
+{%- assign onesd = n | modulo: 10 -%}
+{%- assign dsum = tensd | plus: onesd -%}
+{%- assign deva = n | append: '' | replace: '0','०' | replace: '1','१' | replace: '2','२' | replace: '3','३' | replace: '4','४' | replace: '5','५' | replace: '6','६' | replace: '7','७' | replace: '8','८' | replace: '9','९' -%}
+<section class="wrap page">
+  <p class="crumbs"><a href="{{ '/' | relative_url }}">Home</a> › <a href="{{ '/numbers/' | relative_url }}">Numbers</a> › {{ n }}</p>
+  <div class="numhero">
+    <div class="bignum">{{ n }}</div>
+    <div>
+      <h1>Number {{ n }}: {{ d.w }}</h1>
+      <p class="lede">{{ n }} is {% if par == 0 %}an even{% else %}an odd{% endif %} number{% if cnt == 2 %} and a prime{% elsif cnt > 2 %} and a composite with {{ cnt }} divisors{% endif %}. It comes after {% if n == 0 %}−1{% else %}{{ prev }}{% endif %} and before {{ next }}.</p>
+    </div>
+  </div>
+  <div class="tool-layout">
+    <div class="prose">
+      {%- if d.f %}<p class="fact">{{ d.f }}</p>{% endif %}
+      <h2>{{ n }} at a glance</h2>
+      <table class="facts">
+        <tr><th>In words (English)</th><td>{{ d.w }}</td></tr>
+        <tr><th>In words (Hindi, romanised)</th><td>{{ d.h }}</td></tr>
+        <tr><th>Devanagari digits</th><td>{{ deva }}</td></tr>
+        <tr><th>Roman numeral</th><td>{{ d.r }}</td></tr>
+        <tr><th>Binary</th><td>{{ d.b }}</td></tr>
+        <tr><th>Hexadecimal</th><td>{{ d.x }}</td></tr>
+        <tr><th>Even or odd</th><td>{% if par == 0 %}Even{% else %}Odd{% endif %}</td></tr>
+        <tr><th>Prime?</th><td>{% if cnt == 2 %}Yes, {{ n }} is prime{% elsif n < 2 %}No, {{ n }} is neither prime nor composite{% else %}No, {{ n }} is composite{% endif %}</td></tr>
+        <tr><th>Divisors</th><td>{% if n == 0 %}Every non-zero whole number divides 0{% else %}{{ divs }} ({{ cnt }} in total){% endif %}</td></tr>
+        <tr><th>Square</th><td>{{ n }}² = {{ sq }}</td></tr>
+        <tr><th>Cube</th><td>{{ n }}³ = {{ cu }}</td></tr>
+        <tr><th>Sum of digits</th><td>{{ dsum }}</td></tr>
+      </table>
+      <h2>{{ n }} in a fair pot draw</h2>
+      <p>Put one hundred chits numbered 00 to 99 into a matka and pull one without looking. The chance that it reads <strong>{% if n < 10 %}0{% endif %}{{ n }}</strong> is exactly 1 in 100, or 1%. That is the same as for every other chit. No number is "due", "hot" or "lucky": the pot has no memory of earlier draws. {% if n < 10 %}In a single-digit draw from 0 to 9, the chance of {{ n }} is 1 in 10, or 10%.{% else %}A two-digit result like {{ n }} needs both digits to land: 1 in 10 for the {{ tensd }} and 1 in 10 for the {{ onesd }}, which multiplies to 1 in 100.{% endif %}</p>
+      <p>This is why any game that pays less than 100 times the stake on a 1-in-100 result loses money for the player over time. The <a href="{{ '/tools/odds-calculator.html' | relative_url }}">odds calculator</a> shows the arithmetic, and <a href="{{ '/learn/why-number-betting-loses.html' | relative_url }}">this lesson</a> explains it step by step.</p>
+      <h2>Try it</h2>
+      <p><a class="btn" href="{{ '/tools/random-number-generator.html' | relative_url }}">Draw a random number</a> <a class="btn ghost" href="{{ '/tools/number-checker.html' | relative_url }}">Check any number</a></p>
+      <nav class="pager">
+        {%- if n > 0 %}<a href="{{ '/numbers/' | append: prev | append: '.html' | relative_url }}">← {{ prev }}</a>{% else %}<span></span>{% endif %}
+        <a href="{{ '/numbers/' | relative_url }}">All numbers</a>
+        {%- if n < 99 %}<a href="{{ '/numbers/' | append: next | append: '.html' | relative_url }}">{{ next }} →</a>{% else %}<span></span>{% endif %}
+      </nav>
+    </div>
+    <aside class="side">
+      <h3>Number tools</h3>
+      {%- for t in site.data.tools %}
+      <a class="sidelink" href="{{ t.url | relative_url }}"><span>{{ t.icon }}</span> {{ t.name }}</a>
+      {%- endfor %}
+    </aside>
+  </div>
+</section>
