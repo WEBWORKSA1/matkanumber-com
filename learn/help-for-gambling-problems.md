@@ -24,7 +24,7 @@ One or two of these is reason enough to act.
 4. **Write down the real total.** Add up a month of stakes and returns. The [odds calculator]({{ '/tools/odds-calculator.html' | relative_url }}) shows why the total can only go one way.
 5. **Fill the time.** Urges fade in 20 to 30 minutes. Walk, call someone, or do anything that uses your hands.
 
-## Free, confidential support
+## Free support lines
 
 - **India:** Tele-MANAS, the national tele-mental-health service, on **14416**. Counsellors are available in many languages.
 - **United Kingdom:** National Gambling Helpline run by GamCare, **0808 8020 133**, and [gamcare.org.uk](https://www.gamcare.org.uk/).
