@@ -1,0 +1,15 @@
+---
+layout: default
+title: Learn the maths of chance
+description: Short, plain-language lessons on probability, randomness, fair draws, Indian numbers and why number betting loses.
+---
+<section class="wrap page">
+  <h1>Learn the maths of chance</h1>
+  <p class="lede">Nine short lessons. No formulas you cannot follow, no selling, no tips.</p>
+  <div class="cards">
+    {%- assign arts = site.pages | where: "layout", "article" | sort: "order" -%}
+    {%- for a in arts %}
+    <a class="card" href="{{ a.url | relative_url }}"><p class="eyebrow" style="color:#b9562c">Lesson {{ forloop.index }} · {{ a.read }} min</p><h3>{{ a.title }}</h3><p>{{ a.description }}</p></a>
+    {%- endfor %}
+  </div>
+</section>
