@@ -4,10 +4,9 @@ description: >-
   MatkaNumber is a free, independent numbers site: a fair random draw from the matka (clay pot),
   number generators and calculators, facts about every number from 0 to 99, and plain-language
   lessons on probability. No betting, no results, no tips.
-# Preview on GitHub Pages. For the custom domain: set url to https://matkanumber.com,
-# baseurl to "" and add a CNAME file (see README).
-url: "https://webworksa1.github.io"
-baseurl: "/matkanumber-com"
+# Live on the custom domain (CNAME: matkanumber.com), served from the root.
+url: "https://matkanumber.com"
+baseurl: ""
 domain: "MatkaNumber.com"
 lang: en
 adsense_client: "ca-pub-6620975821265271"
